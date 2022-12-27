@@ -3,7 +3,7 @@
     "SYNTH_READ_BLACKBOX_LIB": true,
     "BASE_SDC_FILE": "dir::src/base.sdc",
     "VERILOG_FILES": "dir::src/*.v",
-    "CLOCK_PERIOD": "5",
+    "CLOCK_PERIOD": "10",
     "CLOCK_PORT": "clk",
     "PL_RANDOM_GLB_PLACEMENT": true,
     "FP_SIZING": "absolute",

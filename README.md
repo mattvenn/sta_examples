@@ -93,3 +93,21 @@ fails with:
                -0.003   slack (VIOLATED)
 
 
+## OpenLane notes
+
+trying with a very simple setup (see openlane dir)
+with a base.sdc like this:
+
+    create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+    set_input_delay -clock clk 10 {in}
+
+And changing the input delay:
+
+* With no base sdc, passes
+* with base sdc and 10 for delay, flow fails with setup violation
+* with base sdc and 0 delay, passes.
+
+All GDS have 1 flop and 2 buffers, one on input, one on output.
+Very slight variation - the 0 delay version, the output has a buffer instead of clkbuffer for the output buffer.
+
+I was expecting the tools to prevent the flow from failing.
