@@ -111,3 +111,6 @@ All GDS have 1 flop and 2 buffers, one on input, one on output.
 Very slight variation - the 0 delay version, the output has a buffer instead of clkbuffer for the output buffer.
 
 I was expecting the tools to prevent the flow from failing.
+
+local run 'make min_max' fails, but with the same input delay (-min 0 -max 5), openlane succeeds. So I think this is an example of an sdc working
+to insert buffers to ensure timing closure.
